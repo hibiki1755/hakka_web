@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせフォーム</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Hakka Wedding</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">サロンについて</a></li>
+                    <li><a href="#wedding-dress">ウェディングドレス</a></li>
+                    <li><a href="#color-dress">カラードレス</a></li>
+                    <li><a href="#photo-wedding">フォトウェディング</a></li>
+                    <li><a href="#flower-salon">フラワーサロン</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<div class="container mt-5">
+    <h2>お問い合わせフォーム</h2>
+    <form>
+        <div class="form-group">
+            <label for="name">お名前</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="form-group">
+            <label for="furigana">フリガナ</label>
+            <input type="text" class="form-control" id="furigana" required>
+        </div>
+        <div class="form-group">
+            <label for="zipcode">郵便番号</label>
+            <input type="text" class="form-control" id="zipcode" placeholder="1234567" pattern="\d{7}" required>
+        </div>
+        <div class="form-group">
+            <label for="address">住所</label>
+            <input type="text" class="form-control" id="address" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">電話番号</label>
+            <input type="tel" class="form-control" id="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="email">メールアドレス</label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="confirm-email">確認用メールアドレス</label>
+            <input type="email" class="form-control" id="confirm-email" required>
+        </div>
+        <div class="form-group">
+            <label for="wedding-date">挙式日（ドレスレンタル希望の方）</label>
+            <input type="date" class="form-control" id="wedding-date">
+        </div>
+        <div class="form-group">
+            <label>フォトウェディング希望日</label>
+            <div>
+                <label for="photo-date-1">第1希望</label>
+                <input type="date" class="form-control" id="photo-date-1">
+            </div>
+            <div>
+                <label for="photo-date-2">第2希望</label>
+                <input type="date" class="form-control" id="photo-date-2">
+            </div>
+            <div>
+                <label for="photo-date-3">第3希望</label>
+                <input type="date" class="form-control" id="photo-date-3">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>お問い合わせ内容</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="rental-dress">
+                <label class="form-check-label" for="rental-dress">ドレスレンタル</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="photo-wedding">
+                <label class="form-check-label" for="photo-wedding">フォトウェディング（ロケ地 東京・神奈川）</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="flower-item">
+                <label class="form-check-label" for="flower-item">フラワーアイテムオーダー</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="bouquet-rental">
+                <label class="form-check-label" for="bouquet-rental">ブーケレンタル</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="flower-lesson">
+                <label class="form-check-label" for="flower-lesson">出張フラワーレッスン依頼</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="other">
+                <label class="form-check-label" for="other">その他</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="additional-requests">ご要望など</label>
+            <textarea class="form-control" id="additional-requests" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">送信</button>
+    </form>
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+/* 全体 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* ヘッダー */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.header-overlay {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.9); /* 背景色 */
+  color: #fff; /* テキスト色 */
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between; /* ロゴとナビゲーションを画面の両端に配置 */
+  align-items: center; /* 項目を垂直方向に中央揃え */
+  padding: 0px 20px; /* 余白設定 */
+  max-width: 1200px; /* 最大幅 */
+  margin: 0 auto; /* 中央寄せ */
+}
+
+.header-content h1, .header-content nav{
+  margin: 10px 0;
+}
+
+.header-content h1 {
+  font-size: 24px; /* フォントサイズ調整 */
+}
+
+.header-content nav ul {
+  display: flex; /* ナビゲーション項目を横並びにする */
+  list-style: none; /* リストのスタイルをなしに */
+  padding: 0; /* デフォルトのパディングを削除 */
+}
+
+.header-content nav ul li {
+  margin-left: 20px; /* ナビゲーション項目間の間隔 */
+}
+
+.header-content nav ul li a {
+  color:#6c757d; /* リンクの色 */
+  text-decoration: none; /* 下線を非表示 */
+  font-size: 16px; /* フォントサイズ調整 */
+}
+
+.header-content nav ul li a:hover {
+  text-decoration: underline; /* ホバー時に下線を表示 */
+}
+
+/* ハンバーガーメニューボタンのスタイル */
+.hamburger {
+  display: none; /* デフォルトでは非表示 */
+  font-size: 24px; /* アイコンサイズ */
+  background: none;
+  border: none;
+  color: #6c757d; /* アイコンカラー */
+}
+
+/* メディアクエリでモバイルデバイスのスタイルを指定 */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* モバイルデバイスで表示 */
+  }
+
+  .header-content nav ul {
+    display: none; /* メニューはデフォルトで非表示 */
+    flex-direction: column; /* 縦並びに */
+    width: 100%; /* 幅全体 */
+  }
+
+  .header-content nav ul li {
+    text-align: center; /* テキストを中央寄せ */
+    margin: 10px 0; /* 余白の調整 */
+  }
+
+  .header-content nav.active ul {
+    display: flex; /* アクティブ時にメニューを表示 */
+  }
+
+  .hamburger, .header-content nav {
+    z-index: 100; /* h2のz-indexよりも大きい値 */
+  }
+  
+  .header-overlay {
+    position: fixed; /* z-indexを有効化 */
+    z-index: 100; /* ヘッダー全体を前面に */
+  }
+  
+
+}
+
+/* スライドショー */
+.slide{
+  margin-top: 60px;
+}
+  
+.slide h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 99;
+    text-align: center;
+    font-family: Raleway, sans-serif;
+    font-weight: 300;
+    text-transform: capitalize;
+    background-color: rgba(255,255,255,.75);
+    box-shadow: 0 1em 2em -1em rgba(0,0,0,.5);
+    padding: 1em 2em;
+    line-height: 1.5;
+}
+  
+.slideshow {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  margin-top: 80px;
+}
+  
+.slideshow-image {
+    position: absolute;
+    flex: 1;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    background-position: center; /* 背景画像を中央に配置 */
+    background-size: cover; /* 背景画像がコンテナを覆うように調整 */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+    opacity: 1;
+    transform: scale(1.2); /* 初期状態で少し拡大して表示 */
+}
+.slideshow-image:nth-child(1) {
+    -webkit-animation-name: kenburns-1;
+            animation-name: kenburns-1;
+    z-index: 3;
+}
+.slideshow-image:nth-child(2) {
+    -webkit-animation-name: kenburns-2;
+            animation-name: kenburns-2;
+    z-index: 2;
+}
+.slideshow-image:nth-child(3) {
+    -webkit-animation-name: kenburns-3;
+            animation-name: kenburns-3;
+    z-index: 1;
+}
+.slideshow-image:nth-child(4) {
+    -webkit-animation-name: kenburns-4;
+            animation-name: kenburns-4;
+    z-index: 0;
+}
+  
+@-webkit-keyframes kenburns-1 {
+    0% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    1.5625% {
+      opacity: 1;
+    }
+    23.4375% {
+      opacity: 1;
+    }
+    26.5625% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.2);
+    }
+    98.4375% {
+      opacity: 0;
+      transform: scale(1.2117647059);
+    }
+    100% {
+      opacity: 1;
+    }
+}
+  
+@keyframes kenburns-1 {
+    0% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    1.5625% {
+      opacity: 1;
+    }
+    23.4375% {
+      opacity: 1;
+    }
+    26.5625% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.2);
+    }
+    98.4375% {
+      opacity: 0;
+      transform: scale(1.2117647059);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+@-webkit-keyframes kenburns-2 {
+    23.4375% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    26.5625% {
+      opacity: 1;
+    }
+    48.4375% {
+      opacity: 1;
+    }
+    51.5625% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.2);
+    }
+}
+@keyframes kenburns-2 {
+    23.4375% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    26.5625% {
+      opacity: 1;
+    }
+    48.4375% {
+      opacity: 1;
+    }
+    51.5625% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.2);
+    }
+}
+@-webkit-keyframes kenburns-3 {
+    48.4375% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    51.5625% {
+      opacity: 1;
+    }
+    73.4375% {
+      opacity: 1;
+    }
+    76.5625% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.2);
+    }
+}
+@keyframes kenburns-3 {
+    48.4375% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    51.5625% {
+      opacity: 1;
+    }
+    73.4375% {
+      opacity: 1;
+    }
+    76.5625% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.2);
+    }
+}
+@-webkit-keyframes kenburns-4 {
+    73.4375% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    76.5625% {
+      opacity: 1;
+    }
+    98.4375% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+}
+@keyframes kenburns-4 {
+    73.4375% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    76.5625% {
+      opacity: 1;
+    }
+    98.4375% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slideshow {
+      height: 400px; /* Adjust based on desired height */
+  }
+  .slide h2 {
+    font-size: 16px; /* スマートフォン用にフォントサイズを小さくする */
+    padding: 0.5em 1em; /* パディングを調整 */
+}
+}
+
+.slide h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 99;
+    text-align: center;
+    font-family: Raleway, sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 1em 2em -1em rgba(0, 0, 0, 0.5);
+    padding: 1em 2em;
+    line-height: 1.5;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+/* サロンについて、カラードレス、フラワーサロン*/
+#about, #color-dress, #flower-salon {
+  margin-top: 20px; /* Adds space between the slideshow and the section */
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* 中央揃えにする */
+  justify-content: center; /* コンテンツをセンター揃えに */
+  text-align: center; /* テキストを左揃えに */
+  font-size: 14px;
+  gap: 20px; /* 画像とテキストの間隔 */
+}
+
+#about img, #color-dress img, #flower-salon img {
+  max-width: 50%; /* 画像の最大幅を50%に設定 */
+  height: auto; /* 画像の高さを自動調整 */
+  flex-shrink: 0; /* 画像が縮小されないようにする */
+  order: 2;
+}
+
+.text-content-left{
+  width: 50%;
+  padding-right: 20px;
+}
+
+/* ウェディングドレス、フォトウェディング */
+#wedding-dress, #photo-wedding {
+  margin-top: 20px; /* Adds space between the slideshow and the section */
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* 中央揃えにする */
+  justify-content: center; /* コンテンツをセンター揃えに */
+  text-align: center; /* テキストを左揃えに */
+  font-size: 14px;
+  gap: 20px; /* 画像とテキストの間隔 */
+}
+
+#wedding-dress img, #photo-wedding img {
+  max-width: 50%; /* 画像の最大幅を50%に設定 */
+  height: auto; /* 画像の高さを自動調整 */
+  flex-shrink: 0; /* 画像が縮小されないようにする */
+  order: -1;
+}
+
+.text-content-right{
+  width: 50%;
+  padding-left: 20px;
+}
+
+/* フッター */
+.site-footer {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  text-align: center;
+  padding: 20px 0;
+  flex-direction: row;
+  
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-content div {
+  margin: 0 15px;
+}
+
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-content ul li a {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  font-size: 0.8em;
+}
+
+.sns-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+  
+.sns-btn li {
+  width: 20px;
+  margin: 0.15px;
+}
+
+/* スマホ表示用のスタイル */
+@media (max-width: 768px) {
+  header h1, .header-content nav ul li a {
+      font-size: 14px; /* ヘッダーのフォントサイズを小さくする */
+  }
+
+  .header-content, .text-content-left, .text-content-right {
+      padding: 10px; /* コンテンツのパディングを調整する */
+  }
+
+  .text-content-left img, .text-content-right img {
+      max-width: 100%;
+      width: auto; /* 画像をスクリーン幅に合わせる */
+      height: auto; /* 画像の高さを自動調整する */
+      display: block; /* 画像をブロック要素として表示する */
+      margin: 0 auto 20px; /* 画像のマージンを調整する */
+      order: 0;
+      padding: 0;
+  }
+
+  .text-content-left, .text-content-right {
+      text-align: center; /* テキストを中央揃えにする */
+      padding: 0 20px;
+  }
+
+  nav ul {
+      flex-direction: column; /* ナビゲーション項目を縦に並べる */
+  }
+
+  /* その他スマホ表示に最適なスタイル調整 */
+  /* サロンについて（スマホ） */
+  #about {
+    flex-direction: column; /* 小画面では縦並びに配置 */
+    text-align: center;
+  }
+
+  #about img, .text-content-left {
+    max-width: 100%;
+    order: 0; /* 小画面では順序をデフォルトに戻す */
+    width: auto; /* 画像の幅を自動調整 */
+    padding: 0; /* 小画面ではパディングを削除 */
+  }
+
+  .text-content-left {
+    padding: 0 20px; /* テキストに適切な余白を設定 */
+  }
+
+  /* ウェディングドレス（スマホ） */
+  #wedding-dress {
+    flex-direction: column; /* 小画面では縦並びに配置 */
+    text-align: center;
+  }
+
+  #wedding-dress img, .text-content-right {
+    max-width: 100%;
+    order: 0; /* 小画面では順序をデフォルトに戻す */
+    width: auto; /* 画像の幅を自動調整 */
+    padding: 0; /* 小画面ではパディングを削除 */
+  }
+
+  .text-content-right {
+    padding: 0 20px; /* テキストに適切な余白を設定 */
+  }
+
+/* カラードレスドレス（スマホ） */
+  #color-dress {
+    flex-direction: column; /* 小画面では縦並びに配置 */
+    text-align: center;
+  }
+ 
+  #color-dress img, .text-content-left {
+    max-width: 100%;
+    order: 0; /* 小画面では順序をデフォルトに戻す */
+    width: auto; /* 画像の幅を自動調整 */
+    padding: 0; /* 小画面ではパディングを削除 */
+  }
+
+  .text-content-left {
+    padding: 0 20px; /* テキストに適切な余白を設定 */
+  }
+
+  /* フォトウェディング（スマホ） */
+  #photo-wedding {
+    flex-direction: column; /* 小画面では縦並びに配置 */
+    text-align: center;
+  }
+
+  #photo-wedding img, .text-content-right {
+    max-width: 100%;
+    order: 0; /* 小画面では順序をデフォルトに戻す */
+    width: auto; /* 画像の幅を自動調整 */
+    padding: 0; /* 小画面ではパディングを削除 */
+  }
+
+  .text-content-right {
+    padding: 0 20px; /* テキストに適切な余白を設定 */
+  }
+
+/* フラワーサロン（スマホ） */
+#flower-salon {
+  flex-direction: column; /* 小画面では縦並びに配置 */
+  text-align: center;
+}
+
+#flower-salon img, .text-content-left {
+  max-width: 100%;
+  order: 0; /* 小画面では順序をデフォルトに戻す */
+  width: auto; /* 画像の幅を自動調整 */
+  padding: 0; /* 小画面ではパディングを削除 */
+}
+
+.text-content-left {
+  padding: 0 20px; /* テキストに適切な余白を設定 */
+} 
+}
+
